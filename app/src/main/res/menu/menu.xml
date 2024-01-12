@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_gestion"
+        android:title="Gestion de Datos" />
+    <item
+        android:id="@+id/menu_visualizar"
+        android:title="Visualizar" />
+    <item
+        android:id="@+id/menu_consultas"
+        android:title="Consultas" />
 
 </menu>

@@ -9,7 +9,8 @@ public final class EstructuraBBDD {
                     + EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR+ " text, "
                     + EstructuraCampeonatoTorneo.COLUMN_CIUDAD + " text, "
                     + EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS + " integer, "
-                    + EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR + " blob, ";
+                    + EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR + " blob)";
+
     public static final String SQL_CREATE_PARTIDA =
             "CREATE TABLE IF NOT EXISTS "+ EstructuraPartida.TABLE_NAME_PARTIDA +
                     "("+ EstructuraPartida.COLUMN_NUM_ENCUENTRO+ " integer, "
@@ -17,8 +18,7 @@ public final class EstructuraBBDD {
                     + EstructuraPartida.COLUMN_JUGADOR_1 + " integer, "
                     + EstructuraPartida.COLUMN_JUGADOR_2+ " integer, "
                     + EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1 + " integer, "
-                    + EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2+ " integer, ";
-
+                    + EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2+ " integer)";
 
     public static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS  " + EstructuraCampeonatoTorneo.TABLE_NAME_TORNEO;
