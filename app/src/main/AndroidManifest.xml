@@ -36,9 +36,7 @@
         <activity
             android:name=".ModificarEquipos"
             android:exported="false" />
-        <activity
-            android:name=".Modificar"
-            android:exported="false" />
+
         <activity
             android:name=".Inicio"
             android:exported="false" />

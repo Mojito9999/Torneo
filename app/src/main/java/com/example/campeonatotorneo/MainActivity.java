@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //hacemos que funcione el scroll del cuadro de texto, primero hemos dicho en el xml que tiene scrollbars verticales
+        /*//hacemos que funcione el scroll del cuadro de texto, primero hemos dicho en el xml que tiene scrollbars verticales
         txtTexto.setMovementMethod(new ScrollingMovementMethod());
 
 
@@ -83,5 +83,5 @@ public class MainActivity extends AppCompatActivity {
 
             c.moveToNext();
         }
-    }
-}
+    }*/
+}}
