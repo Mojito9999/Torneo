@@ -5,40 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ModificarEquipos"
+    tools:context=".EliminacionPartidas"
     tools:ignore="ExtraText">
     android:fitsSystemWindows="true">
 
     <EditText
-        android:id="@+id/edtJugadorNuevo"
+        android:id="@+id/edtEncuentroNuevo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Jugador"
+        android:hint="Encuentro"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtCiudadNueva"
+        android:id="@+id/edtFechaNueva"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Ciudad"
+        android:hint="Fecha"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtPartidaNuevo"
+        android:id="@+id/edtJugadorNuevo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Partidas Ganadas"
+        android:hint="Jugador 1"
         android:inputType="textPersonName" />
 
+    <EditText
+        android:id="@+id/edtJugadorNuevo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Jugador 2"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtPuntosJugadorNuevo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Puntos jugador 1"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtPuntosJugadorNuevo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Puntos jugador 2"
+        android:inputType="textPersonName" />
     <Button
         android:id="@+id/btnInsertar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="modificarEquipos"
-        android:text="MODIFICAR" />
+        android:onClick="eliminarPartidas"
+        android:text="ELIMINAR" />
 
     <View
         android:id="@+id/view"

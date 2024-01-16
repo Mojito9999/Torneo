@@ -2,11 +2,10 @@ package com.example.campeonatotorneo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
-import android.database.Cursor;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
+import android.view.MenuInflater;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -83,5 +82,36 @@ public class MainActivity extends AppCompatActivity {
 
             c.moveToNext();
         }
-    }*/
+
+    }
+        */
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu, menu);
+            return true;
+        }
+
+     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id= item.getItemId();
+
+        if(id== R.id.menu_visualizar){
+            Intent intent = new Intent(this, MuestraDatosCompletos.class;
+            startActivity(intent);
+            return true;
+        }else if(id== R.id.menu_consultas){
+            Intent intent = new Intent(this, ConsultaDatos.class);
+            startActivity(intent);
+            return true;
+        }else if(id== R.id.menu_gestion){
+            Intent intent = new Intent(this, GestionDatos.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }}

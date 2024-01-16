@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-public class ListarPartidas extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ConsultaPartidas extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     TextView txtTexto,txtTexto1, txtTexto2,txtTexto3,txtTexto4,txtTexto5;
     SQLiteDatabase db;
@@ -24,7 +24,7 @@ public class ListarPartidas extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_partidas);
+        setContentView(R.layout.activity_consulta_partidas);
 
         txtTexto = findViewById(R.id.txtTexto);
         txtTexto1 = findViewById(R.id.textView1);
@@ -40,6 +40,7 @@ public class ListarPartidas extends AppCompatActivity implements AdapterView.OnI
 
         lv.setOnItemClickListener(this);
 
+        return false;
     }
 
     private void consultaPartida() {

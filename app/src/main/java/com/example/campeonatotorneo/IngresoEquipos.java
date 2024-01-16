@@ -1,5 +1,6 @@
 package com.example.campeonatotorneo;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class EliminarEquipos extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class IngresoEquipos extends AppCompatActivity implements AdapterView.OnItemClickListener {
     SQLiteHelper helper;
     SQLiteDatabase db;
     TextView edtTexto1, edtTexto2,edtTexto3;
@@ -23,7 +24,7 @@ public class EliminarEquipos extends AppCompatActivity implements AdapterView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar_equipos);
+        setContentView(R.layout.activity_ingreso_equipos);
 
         edtTexto1 = findViewById(R.id.edtJugadorNuevo);
         edtTexto2 = findViewById(R.id.edtCiudadNueva);
@@ -34,6 +35,7 @@ public class EliminarEquipos extends AppCompatActivity implements AdapterView.On
         consultaTorneo();
         lv.setOnItemClickListener(this);
 
+        return false;
     }
     public void onItemClick(AdapterView<?> listView, View view, int position, long
             id) {
@@ -48,21 +50,23 @@ public class EliminarEquipos extends AppCompatActivity implements AdapterView.On
         edtTexto2.setText(compositor);
         edtTexto3.setText(Integer.toString(year));
     }
-    public void eliminarEquipos(View view) {
+    public void ingresarEquipos(View view) {
         db = helper.getWritableDatabase();
 
-        if (_idCursor > 0) {
-            String selection = EstructuraBBDD.EstructuraCampeonatoTorneo._ID + "=?";
-            String[] selectionArgs = {String.valueOf(_idCursor)};
+        String nombreNuevo = String.valueOf(edtTexto1.getText());
+        String ciudadNueva = String.valueOf(edtTexto2.getText());
+        String partidasGanadasNuevas = String.valueOf(edtTexto3.getText());
 
-            int filasEliminadas = db.delete(
-                    EstructuraBBDD.EstructuraCampeonatoTorneo.TABLE_NAME_TORNEO,
-                    selection,
-                    selectionArgs
-            );
+        if (!nombreNuevo.isEmpty() && !ciudadNueva.isEmpty()) {
+            ContentValues values = new ContentValues();
+            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, nombreNuevo);
+            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD, ciudadNueva);
+            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, partidasGanadasNuevas);
 
-            if (filasEliminadas > 0) {
-                consultaTorneo(); // Actualizamos la lista después de eliminar
+            long newRowId = db.insert(EstructuraBBDD.EstructuraCampeonatoTorneo.TABLE_NAME_TORNEO, null, values);
+
+            if (newRowId != -1) {
+                consultaTorneo(); // Actualizamos la lista después de insertar
             }
         }
 

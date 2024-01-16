@@ -1,6 +1,5 @@
 package com.example.campeonatotorneo;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -11,12 +10,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class EliminarPartidas extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class EliminacionPartidas extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     TextView edtTexto,edtTexto1, edtTexto2,edtTexto3,edtTexto4,edtTexto5;
     SQLiteDatabase db;
@@ -27,7 +25,7 @@ public class EliminarPartidas extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar_partidas);
+        setContentView(R.layout.activity_eliminacion_partidas);
 
         edtTexto = findViewById(R.id.edtEncuentroNuevo);
         edtTexto1 = findViewById(R.id.edtFechaNueva);
@@ -41,6 +39,7 @@ public class EliminarPartidas extends AppCompatActivity implements AdapterView.O
         consultaPartida();
         lv.setOnItemClickListener(this);
 
+        return false;
     }
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {

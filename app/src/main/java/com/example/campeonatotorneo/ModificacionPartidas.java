@@ -16,7 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class ModificarPartidas extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ModificacionPartidas extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     TextView edtTexto,edtTexto1, edtTexto2,edtTexto3,edtTexto4,edtTexto5;
     SQLiteDatabase db;
@@ -27,7 +27,7 @@ public class ModificarPartidas extends AppCompatActivity implements AdapterView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modificar_partidas);
+        setContentView(R.layout.activity_modificacion_partidas);
 
         edtTexto = findViewById(R.id.edtEncuentroNuevo);
         edtTexto1 = findViewById(R.id.edtFechaNueva);
@@ -41,6 +41,7 @@ public class ModificarPartidas extends AppCompatActivity implements AdapterView.
         consultaPartida();
         lv.setOnItemClickListener(this);
 
+        return false;
     }
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {

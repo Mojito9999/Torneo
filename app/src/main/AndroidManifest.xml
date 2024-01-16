@@ -13,30 +13,38 @@
         android:theme="@style/Theme.CampeonatoTorneo"
         tools:targetApi="31">
         <activity
-            android:name=".IngresarPartidas"
+            android:name=".GestionDatos"
             android:exported="false" />
         <activity
-            android:name=".EliminarPartidas"
+            android:name=".MuestraDatosCompletos"
             android:exported="false" />
         <activity
-            android:name=".IngresarEquipos"
+            android:name=".ConsultaDatos"
             android:exported="false" />
         <activity
-            android:name=".EliminarEquipos"
+            android:name=".IngresoPartidas"
             android:exported="false" />
         <activity
-            android:name=".ModificarPartidas"
+            android:name=".EliminacionPartidas"
             android:exported="false" />
         <activity
-            android:name=".ListarPartidas"
+            android:name=".IngresoEquipos"
             android:exported="false" />
         <activity
-            android:name=".ListarTorneos"
+            android:name=".EliminacionEquipos"
             android:exported="false" />
         <activity
-            android:name=".ModificarEquipos"
+            android:name=".ModificacionPartidas"
             android:exported="false" />
-
+        <activity
+            android:name=".ConsultaPartidas"
+            android:exported="false" />
+        <activity
+            android:name=".ConsultaEquipos"
+            android:exported="false" />
+        <activity
+            android:name=".ModificacionEquipos"
+            android:exported="false" />
         <activity
             android:name=".Inicio"
             android:exported="false" />

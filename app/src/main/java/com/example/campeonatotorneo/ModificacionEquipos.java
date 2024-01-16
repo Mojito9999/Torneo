@@ -15,7 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class ModificarEquipos extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ModificacionEquipos extends AppCompatActivity implements AdapterView.OnItemClickListener {
     SQLiteHelper helper;
     SQLiteDatabase db;
     TextView edtTexto1, edtTexto2,edtTexto3;
@@ -25,7 +25,7 @@ public class ModificarEquipos extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modificar_equipos);
+        setContentView(R.layout.activity_modificacion_equipos);
 
         edtTexto1 = findViewById(R.id.edtJugadorNuevo);
         edtTexto2 = findViewById(R.id.edtCiudadNueva);
@@ -36,6 +36,7 @@ public class ModificarEquipos extends AppCompatActivity implements AdapterView.O
         consultaTorneo();
         lv.setOnItemClickListener(this);
 
+        return false;
     }
     public void onItemClick(AdapterView<?> listView, View view, int position, long
             id) {

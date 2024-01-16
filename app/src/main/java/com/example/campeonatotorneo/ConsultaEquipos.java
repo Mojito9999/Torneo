@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-public class ListarTorneos extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ConsultaEquipos extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     TextView txtTexto1, txtTexto2,txtTexto3;
     SQLiteDatabase db;
@@ -24,7 +24,7 @@ public class ListarTorneos extends AppCompatActivity implements AdapterView.OnIt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_torneos);
+        setContentView(R.layout.activity_consulta_equipos);
 
         txtTexto1 = findViewById(R.id.txtTexto);
         txtTexto2 = findViewById(R.id.textView2);
@@ -37,6 +37,7 @@ public class ListarTorneos extends AppCompatActivity implements AdapterView.OnIt
 
         lv.setOnItemClickListener(this);
 
+        return false;
     }
 
     private void consultaTorneo() {
