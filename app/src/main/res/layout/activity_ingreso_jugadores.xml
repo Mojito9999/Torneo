@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".IngresoEquipos"
+    tools:context=".IngresoJugadores"
     tools:ignore="ExtraText">
     android:fitsSystemWindows="true">
 
     <EditText
-        android:id="@+id/edtJugadorNuevo"
+        android:id="@+id/edtJugador_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -18,7 +18,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtCiudadNueva"
+        android:id="@+id/edtCiudad_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,7 +26,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtPartidaNuevo"
+        android:id="@+id/edtPartida_Moodificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,7 +34,7 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/btnInsertar"
+        android:id="@+id/btnModificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="ingresarEquipos"
@@ -47,7 +47,7 @@
         android:background="#999900" />
 
     <ListView
-        android:id="@+id/lstListaModif"
+        android:id="@+id/lstJugador_consulta"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 </LinearLayout>

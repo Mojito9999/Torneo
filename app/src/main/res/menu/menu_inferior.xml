@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/menu_ubicacion"
+            android:title="Opción 1"
+            android:icon="@drawable/ubicacion" />
+        <item
+            android:id="@+id/menu_correo"
+            android:title="Opción 2"
+            android:icon="@drawable/correo" />
+        <item
+            android:id="@+id/menu_ig"
+            android:title="Opción 3"
+            android:icon="@drawable/instagram" />
+
+</menu>

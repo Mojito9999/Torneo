@@ -10,11 +10,12 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class IngresoEquipos extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ModificacionJugadores extends AppCompatActivity implements AdapterView.OnItemClickListener {
     SQLiteHelper helper;
     SQLiteDatabase db;
     TextView edtTexto1, edtTexto2,edtTexto3;
@@ -24,12 +25,12 @@ public class IngresoEquipos extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ingreso_equipos);
+        setContentView(R.layout.activity_modificacion_jugadores);
 
-        edtTexto1 = findViewById(R.id.edtJugadorNuevo);
-        edtTexto2 = findViewById(R.id.edtCiudadNueva);
-        edtTexto3 = findViewById(R.id.edtPartidaNuevo);
-        lv = findViewById(R.id.lstListaModif);
+        edtTexto1 = findViewById(R.id.edtJugador_Modificar);
+        edtTexto2 = findViewById(R.id.edtCiudad_Modificar);
+        edtTexto3 = findViewById(R.id.edtPartida_Moodificar);
+        lv = findViewById(R.id.lstJugador_consulta);
         helper = new SQLiteHelper(this);
         //realizamos la consulta
         consultaTorneo();
@@ -50,26 +51,29 @@ public class IngresoEquipos extends AppCompatActivity implements AdapterView.OnI
         edtTexto2.setText(compositor);
         edtTexto3.setText(Integer.toString(year));
     }
-    public void ingresarEquipos(View view) {
-        db = helper.getWritableDatabase();
-
-        String nombreNuevo = String.valueOf(edtTexto1.getText());
-        String ciudadNueva = String.valueOf(edtTexto2.getText());
-        String partidasGanadasNuevas = String.valueOf(edtTexto3.getText());
-
-        if (!nombreNuevo.isEmpty() && !ciudadNueva.isEmpty()) {
+    public void modificarEquipos(View view) {
+        db = helper.getReadableDatabase();
+        String nombreModif = String.valueOf(edtTexto1.getText());
+        String ciudadModif = String.valueOf(edtTexto2.getText());
+        String partidasGanadasModif = String.valueOf(edtTexto2.getText());
+        if ((_idCursor > 0) && (nombreModif != "") && (ciudadModif != "")) {
+        //realizamos el update de los campos
             ContentValues values = new ContentValues();
-            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, nombreNuevo);
-            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD, ciudadNueva);
-            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, partidasGanadasNuevas);
-
-            long newRowId = db.insert(EstructuraBBDD.EstructuraCampeonatoTorneo.TABLE_NAME_TORNEO, null, values);
-
-            if (newRowId != -1) {
-                consultaTorneo(); // Actualizamos la lista después de insertar
-            }
+            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, nombreModif);
+            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,
+                    ciudadModif);
+            values.put(EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, partidasGanadasModif);
+            String selection = EstructuraBBDD.EstructuraCampeonatoTorneo._ID + "=?";
+            String[] selectionArgs = {String.valueOf(_idCursor)};
+            int filasModificadas =
+                    db.update(EstructuraBBDD.EstructuraCampeonatoTorneo.TABLE_NAME_TORNEO, values, selection,
+                            selectionArgs);
+            Toast.makeText(getApplicationContext(), "Se han modificado " +
+                    Integer.toString(filasModificadas) + " filas", Toast.LENGTH_SHORT).show();
+            consultaTorneo();
+        } else {
+            Toast.makeText(getApplicationContext(), "Introduzca todos los datos en los campos a modificar", Toast.LENGTH_SHORT).show();
         }
-
         db.close();
     }
     private void consultaTorneo() {
@@ -81,7 +85,7 @@ public class IngresoEquipos extends AppCompatActivity implements AdapterView.OnI
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR};
-        int[] to = {R.id.txtTexto, R.id.textView2,R.id.textView3,R.id.imageView};
+        int[] to = {R.id.txtEncuentror_consulta, R.id.txtCiudad_consulta,R.id.txtPartidasGanadas_consulta,R.id.imageView};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

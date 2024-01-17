@@ -11,10 +11,10 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="#388E3C"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,14 +35,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtTexto"
+                android:id="@+id/txtEncuentror_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Encuentro"
                 android:textColor="#993300"
                 android:textSize="20sp" />
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textFecha_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fecha"
@@ -50,7 +50,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/txtCiudad_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jugador 1"
@@ -58,7 +58,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txtPartidasGanadas_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jugador 2"
@@ -66,7 +66,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textPuntuacionJ1_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Puntuacion jugador 1"
@@ -74,7 +74,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textPuntacionJ2_consulta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Puntuacion jugador 2"
@@ -90,7 +90,7 @@
         android:background="#999900" />
 
     <ListView
-        android:id="@+id/lstListaModif"
+        android:id="@+id/lstJugador_consulta"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"></ListView>
 

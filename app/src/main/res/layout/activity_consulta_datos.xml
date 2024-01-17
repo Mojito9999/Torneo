@@ -11,17 +11,29 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Consuta de datos:" />
+        android:text="Consuta de datos:"
+        android:textSize="34sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/consulta_datos_partidas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Partidas" />
+        android:backgroundTint="#388E3C"
+        android:text="Partidas"
+        android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/consulta_datos_jugadores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:backgroundTint="#388E3C"
+        android:text="Jugadores"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@tools:sample/avatars"
+        app:srcCompat="@drawable/consulta" />
 </LinearLayout>

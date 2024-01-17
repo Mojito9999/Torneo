@@ -10,7 +10,7 @@
     android:fitsSystemWindows="true">
 
     <EditText
-        android:id="@+id/edtEncuentroNuevo"
+        android:id="@+id/edtEncuentro_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -18,7 +18,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtFechaNueva"
+        android:id="@+id/edtFecha_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,7 +26,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtJugadorNuevo1"
+        android:id="@+id/edtJ1_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,7 +34,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtJugadorNuevo2"
+        android:id="@+id/edtJ2_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -42,7 +42,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtPuntosJugadorNuevo1"
+        android:id="@+id/edtPuntosJ1_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -50,16 +50,18 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtPuntosJugadorNuevo2"
+        android:id="@+id/edtPuntosJ2_Modificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Puntos jugador 2"
         android:inputType="textPersonName" />
+
     <Button
-        android:id="@+id/btnInsertar"
+        android:id="@+id/btnModificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#388E3C"
         android:onClick="eliminarPartidas"
         android:text="ELIMINAR" />
 
@@ -70,7 +72,7 @@
         android:background="#999900" />
 
     <ListView
-        android:id="@+id/lstListaModif"
+        android:id="@+id/lstJugador_consulta"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 </LinearLayout>

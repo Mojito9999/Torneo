@@ -29,13 +29,13 @@ public class ModificacionPartidas extends AppCompatActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificacion_partidas);
 
-        edtTexto = findViewById(R.id.edtEncuentroNuevo);
-        edtTexto1 = findViewById(R.id.edtFechaNueva);
-        edtTexto2 = findViewById(R.id.edtJugadorNuevo1);
-        edtTexto3 = findViewById(R.id.edtJugadorNuevo2);
-        edtTexto4 = findViewById(R.id.edtPuntosJugadorNuevo1);
-        edtTexto5 = findViewById(R.id.edtJugadorNuevo2);
-        lv = findViewById(R.id.lstListaModif);
+        edtTexto = findViewById(R.id.edtEncuentro_Modificar);
+        edtTexto1 = findViewById(R.id.edtFecha_Modificar);
+        edtTexto2 = findViewById(R.id.edtJ1_Modificar);
+        edtTexto3 = findViewById(R.id.edtJ2_Modificar);
+        edtTexto4 = findViewById(R.id.edtPuntosJ1_Modificar);
+        edtTexto5 = findViewById(R.id.edtJ2_Modificar);
+        lv = findViewById(R.id.lstJugador_consulta);
         helper = new SQLiteHelper(this);
         //realizamos la consulta
         consultaPartida();
@@ -109,7 +109,7 @@ public class ModificacionPartidas extends AppCompatActivity implements AdapterVi
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraPartida.COLUMN_NUM_ENCUENTRO, EstructuraBBDD.EstructuraPartida.COLUMN_FECHA,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_2, EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2};
-        int[] to = {R.id.txtTexto, R.id.textView1, R.id.textView2,R.id.textView3, R.id.textView4,R.id.textView5,R.id.imageView};
+        int[] to = {R.id.txtEncuentror_consulta, R.id.textFecha_consulta, R.id.txtCiudad_consulta,R.id.txtPartidasGanadas_consulta, R.id.textPuntuacionJ1_consulta,R.id.textPuntacionJ2_consulta,R.id.imageView};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista2, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

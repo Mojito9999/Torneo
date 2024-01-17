@@ -17,14 +17,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtTexto"
+            android:id="@+id/txtEncuentror_consulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Encuentro"
             android:textColor="#993300"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textFecha_consulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fecha"
@@ -32,7 +32,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtCiudad_consulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jugador 1"
@@ -40,7 +40,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtPartidasGanadas_consulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jugador 2"
@@ -48,7 +48,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textPuntuacionJ1_consulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Puntuacion jugador 1"
@@ -56,7 +56,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textPuntacionJ2_consulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Puntuacion jugador 2"

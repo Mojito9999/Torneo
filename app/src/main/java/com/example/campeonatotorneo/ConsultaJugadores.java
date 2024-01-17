@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-public class ConsultaEquipos extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ConsultaJugadores extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     TextView txtTexto1, txtTexto2,txtTexto3;
     SQLiteDatabase db;
@@ -24,13 +24,13 @@ public class ConsultaEquipos extends AppCompatActivity implements AdapterView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consulta_equipos);
+        setContentView(R.layout.activity_consulta_jugadores);
 
-        txtTexto1 = findViewById(R.id.txtTexto);
-        txtTexto2 = findViewById(R.id.textView2);
-        txtTexto3 = findViewById(R.id.textView3);
+        txtTexto1 = findViewById(R.id.txtEncuentror_consulta);
+        txtTexto2 = findViewById(R.id.txtCiudad_consulta);
+        txtTexto3 = findViewById(R.id.txtPartidasGanadas_consulta);
         imgViewFoto = findViewById(R.id.imageView);
-        lv = findViewById(R.id.lstListaModif);
+        lv = findViewById(R.id.lstJugador_consulta);
 
         //realizamos la consulta
         consultaTorneo();
@@ -49,7 +49,7 @@ public class ConsultaEquipos extends AppCompatActivity implements AdapterView.On
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR};
-        int[] to = {R.id.txtTexto, R.id.textView2,R.id.textView3,R.id.imageView};
+        int[] to = {R.id.txtEncuentror_consulta, R.id.txtCiudad_consulta,R.id.txtPartidasGanadas_consulta,R.id.imageView};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

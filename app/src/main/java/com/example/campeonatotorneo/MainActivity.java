@@ -85,33 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
         */
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            MenuInflater inflater = getMenuInflater();
-            inflater.inflate(R.menu.menu, menu);
-            return true;
-        }
-
-     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id= item.getItemId();
-
-        if(id== R.id.menu_visualizar){
-            Intent intent = new Intent(this, MuestraDatosCompletos.class;
-            startActivity(intent);
-            return true;
-        }else if(id== R.id.menu_consultas){
-            Intent intent = new Intent(this, ConsultaDatos.class);
-            startActivity(intent);
-            return true;
-        }else if(id== R.id.menu_gestion){
-            Intent intent = new Intent(this, GestionDatos.class);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 
 }}
