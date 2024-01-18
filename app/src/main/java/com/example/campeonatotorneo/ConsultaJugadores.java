@@ -37,7 +37,6 @@ public class ConsultaJugadores extends AppCompatActivity implements AdapterView.
 
         lv.setOnItemClickListener(this);
 
-        return false;
     }
 
     private void consultaTorneo() {

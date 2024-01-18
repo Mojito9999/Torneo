@@ -40,7 +40,6 @@ public class IngresoPartidas extends AppCompatActivity implements AdapterView.On
         consultaPartida();
         lv.setOnItemClickListener(this);
 
-        return false;
     }
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {

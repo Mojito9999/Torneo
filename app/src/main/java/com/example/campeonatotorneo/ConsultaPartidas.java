@@ -40,7 +40,6 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
 
         lv.setOnItemClickListener(this);
 
-        return false;
     }
 
     private void consultaPartida() {

@@ -34,9 +34,8 @@ public class ModificacionJugadores extends AppCompatActivity implements AdapterV
         helper = new SQLiteHelper(this);
         //realizamos la consulta
         consultaTorneo();
-        lv.setOnItemClickListener(this);
+   //     lv.setOnItemClickListener(this);
 
-        return false;
     }
     public void onItemClick(AdapterView<?> listView, View view, int position, long
             id) {

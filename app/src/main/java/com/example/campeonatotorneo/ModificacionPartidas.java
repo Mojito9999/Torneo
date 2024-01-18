@@ -41,7 +41,7 @@ public class ModificacionPartidas extends AppCompatActivity implements AdapterVi
         consultaPartida();
         lv.setOnItemClickListener(this);
 
-        return false;
+
     }
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {

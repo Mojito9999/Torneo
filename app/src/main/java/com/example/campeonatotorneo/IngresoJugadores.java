@@ -35,7 +35,6 @@ public class IngresoJugadores extends AppCompatActivity implements AdapterView.O
         consultaTorneo();
         lv.setOnItemClickListener(this);
 
-        return false;
     }
     public void onItemClick(AdapterView<?> listView, View view, int position, long
             id) {
