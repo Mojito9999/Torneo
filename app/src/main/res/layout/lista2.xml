@@ -5,64 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageViewItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtEncuentror_consulta"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Encuentro"
-            android:textColor="#993300"
-            android:textSize="20sp" />
-        <TextView
-            android:id="@+id/textFecha_consulta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fecha"
-            android:textColor="#993300"
-            android:textSize="20sp" />
+            android:text="Encuentro" />
 
         <TextView
-            android:id="@+id/txtCiudad_consulta"
+            android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jugador 1"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:text="Fecha" />
 
         <TextView
-            android:id="@+id/txtPartidasGanadas_consulta"
+            android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jugador 2"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:text="Jugador 1" />
 
         <TextView
-            android:id="@+id/textPuntuacionJ1_consulta"
+            android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Puntuacion jugador 1"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:text="Jugador 2" />
 
         <TextView
-            android:id="@+id/textPuntacionJ2_consulta"
+            android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Puntuacion jugador 2"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:text="Puntuacion jugador 1" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puntuacion jugador 2" />
     </LinearLayout>
 
 </LinearLayout>

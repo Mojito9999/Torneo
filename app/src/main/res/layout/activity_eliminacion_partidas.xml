@@ -72,7 +72,8 @@
         android:background="#999900" />
 
     <ListView
-        android:id="@+id/lstJugador_consulta"
+        android:id="@+id/listPartidaConsulta"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent" />
+
 </LinearLayout>

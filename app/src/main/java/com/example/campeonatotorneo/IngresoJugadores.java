@@ -82,7 +82,7 @@ public class IngresoJugadores extends AppCompatActivity implements AdapterView.O
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR};
-        int[] to = {R.id.txtEncuentror_consulta, R.id.txtCiudad_consulta,R.id.txtPartidasGanadas_consulta,R.id.imageView};
+        int[] to = {R.id.textView2, R.id.textView3,R.id.textView4,R.id.imageView};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

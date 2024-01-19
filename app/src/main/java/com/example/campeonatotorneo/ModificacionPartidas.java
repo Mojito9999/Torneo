@@ -111,7 +111,7 @@ public class ModificacionPartidas extends AppCompatActivity implements AdapterVi
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraPartida.COLUMN_NUM_ENCUENTRO, EstructuraBBDD.EstructuraPartida.COLUMN_FECHA,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_2, EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2};
-        int[] to = {R.id.txtEncuentror_consulta, R.id.textFecha_consulta, R.id.txtCiudad_consulta,R.id.txtPartidasGanadas_consulta, R.id.textPuntuacionJ1_consulta,R.id.textPuntacionJ2_consulta,R.id.imageView};
+        int[] to = {R.id.textView8,R.id.textView9,R.id.textView10,R.id.textView11,R.id.textView12,R.id.textView13};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista2, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

@@ -35,7 +35,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtEncuentror_consulta"
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jugador"
@@ -43,7 +43,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/txtCiudad_consulta"
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ciudad"
@@ -51,7 +51,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/txtPartidasGanadas_consulta"
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Partidas Ganadas"

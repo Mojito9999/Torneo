@@ -35,7 +35,7 @@ public class EliminacionPartidas extends AppCompatActivity implements AdapterVie
         edtTexto3 = findViewById(R.id.edtJ2_Modificar);
         edtTexto4 = findViewById(R.id.edtPuntosJ1_Modificar);
         edtTexto5 = findViewById(R.id.edtJ2_Modificar);
-        lv = findViewById(R.id.lstJugador_consulta);
+        lv = findViewById(R.id.listPartidaConsulta);
         helper = new SQLiteHelper(this);
         //realizamos la consulta
         consultaPartida();
@@ -94,7 +94,7 @@ public class EliminacionPartidas extends AppCompatActivity implements AdapterVie
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraPartida.COLUMN_NUM_ENCUENTRO, EstructuraBBDD.EstructuraPartida.COLUMN_FECHA,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_2, EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2};
-        int[] to = {R.id.txtEncuentror_consulta, R.id.textFecha_consulta, R.id.txtCiudad_consulta,R.id.txtPartidasGanadas_consulta, R.id.textPuntuacionJ1_consulta,R.id.textPuntacionJ2_consulta,R.id.imageView};
+        int[] to = {R.id.textView2, R.id.textFecha_consulta, R.id.textView3,R.id.textView4, R.id.textPuntuacionJ1_consulta,R.id.textPuntacionJ2_consulta,R.id.imageView};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista2, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

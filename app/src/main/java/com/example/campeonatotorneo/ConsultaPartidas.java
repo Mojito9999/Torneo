@@ -28,14 +28,14 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta_partidas);
 
-        txtTexto = findViewById(R.id.txtEncuentror_consulta);
+        txtTexto = findViewById(R.id.textView2);
         txtTexto1 = findViewById(R.id.textFecha_consulta);
-        txtTexto2 = findViewById(R.id.txtCiudad_consulta);
-        txtTexto3 = findViewById(R.id.txtPartidasGanadas_consulta);
+        txtTexto2 = findViewById(R.id.textView3);
+        txtTexto3 = findViewById(R.id.textView4);
         txtTexto4 = findViewById(R.id.textPuntuacionJ1_consulta);
         txtTexto5 = findViewById(R.id.textPuntacionJ2_consulta);
         imgViewFoto = findViewById(R.id.imageView);
-        lv = findViewById(R.id.lstJugador_consulta);
+        lv = findViewById(R.id.listPartidaConsulta);
 
         //realizamos la consulta
         consultaPartida();
@@ -53,7 +53,7 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraPartida.COLUMN_NUM_ENCUENTRO, EstructuraBBDD.EstructuraPartida.COLUMN_FECHA,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_2, EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2};
-        int[] to = {R.id.txtEncuentror_consulta, R.id.textFecha_consulta, R.id.txtCiudad_consulta,R.id.txtPartidasGanadas_consulta, R.id.textPuntuacionJ1_consulta,R.id.textPuntacionJ2_consulta,R.id.imageView};
+        int[] to = {R.id.textView8,R.id.textView9,R.id.textView10,R.id.textView11,R.id.textView12,R.id.textView13 };
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista2, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

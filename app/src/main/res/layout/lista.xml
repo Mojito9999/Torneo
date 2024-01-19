@@ -5,41 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageViewItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtEncuentror_consulta"
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jugador"
-            android:textColor="#993300"
-            android:textSize="20sp" />
+            android:text="Jugador" />
 
         <TextView
-            android:id="@+id/txtCiudad_consulta"
-            android:layout_width="fill_parent"
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ciudad"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:text="Ciudad" />
 
         <TextView
-            android:id="@+id/txtPartidasGanadas_consulta"
-            android:layout_width="fill_parent"
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Partidas Ganadas"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
+            android:text="Partidas Ganadas" />
     </LinearLayout>
 
 </LinearLayout>

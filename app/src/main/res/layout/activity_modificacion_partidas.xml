@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#388E3C"
-        android:onClick="modificarEquipos"
+        android:onClick="modificarPartidas"
         android:text="MODIFICAR" />
 
     <View
