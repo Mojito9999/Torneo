@@ -35,7 +35,7 @@ public class IngresoPartidas extends AppCompatActivity implements AdapterView.On
         edtTexto3 = findViewById(R.id.edtJ1_Modificar);
         edtTexto4 = findViewById(R.id.edtJ2_Modificar);
         edtTexto5 = findViewById(R.id.edtPuntosJ1_Modificar);
-        edtTexto6 = findViewById(R.id.edtJ2_Modificar);
+        edtTexto6 = findViewById(R.id.edtPuntosJ2_Modificar);
         lv = findViewById(R.id.listPartidaConsulta);
         helper = new SQLiteHelper(this);
         //realizamos la consulta
@@ -50,7 +50,7 @@ public class IngresoPartidas extends AppCompatActivity implements AdapterView.On
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
         _idCursor=cursor.getInt(0);
         int numEncuentro = cursor.getInt(1);
-        int fecha = cursor.getInt(2);
+        String fecha = cursor.getString(2);
         String jugador1 = cursor.getString(3);
         String jugador2 = cursor.getString(5);
         int puntuacionJugador1 = cursor.getInt(6);
@@ -58,7 +58,7 @@ public class IngresoPartidas extends AppCompatActivity implements AdapterView.On
 
         //mostramos los datos en los cuadros de texto de la parte superior del layout
         edtTexto1.setText(Integer.toString(numEncuentro));
-        edtTexto2.setText(Integer.toString(fecha));
+        edtTexto2.setText(fecha);
         edtTexto3.setText(jugador1);
         edtTexto4.setText(jugador2);
         edtTexto5.setText(Integer.toString(puntuacionJugador1));
@@ -80,7 +80,7 @@ public class IngresoPartidas extends AppCompatActivity implements AdapterView.On
 
         if (!numEncuentroTexto.isEmpty() && !fechaTexto.isEmpty() && !jugador1.isEmpty() && !jugador2.isEmpty() && !puntuacionJugador1Texto.isEmpty() && !puntuacionJugador2Texto.isEmpty()) {
             int numEncuentro = Integer.parseInt(numEncuentroTexto);
-            int fecha = Integer.parseInt(fechaTexto);
+            String fecha = fechaTexto;
             int puntuacionJugador1 = Integer.parseInt(puntuacionJugador1Texto);
             int puntuacionJugador2 = Integer.parseInt(puntuacionJugador2Texto);
 

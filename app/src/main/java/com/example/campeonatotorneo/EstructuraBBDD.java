@@ -15,7 +15,7 @@ public final class EstructuraBBDD {
             "CREATE TABLE IF NOT EXISTS "+ EstructuraPartida.TABLE_NAME_PARTIDA +
                     "("+ EstructuraPartida._ID + " integer PRIMARY KEY,"
                     + EstructuraPartida.COLUMN_NUM_ENCUENTRO+ " integer, "
-                    + EstructuraPartida.COLUMN_FECHA + " integer, "
+                    + EstructuraPartida.COLUMN_FECHA + " text, "
                     + EstructuraPartida.COLUMN_JUGADOR_1 + " integer, "
                     + EstructuraPartida.COLUMN_JUGADOR_2+ " integer, "
                     + EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1 + " integer, "
