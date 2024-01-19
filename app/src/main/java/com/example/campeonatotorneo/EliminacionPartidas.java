@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -100,6 +101,12 @@ public class EliminacionPartidas extends AppCompatActivity implements AdapterVie
         lv.setAdapter(adaptador);
 
         db.close();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
