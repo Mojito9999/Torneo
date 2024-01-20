@@ -8,8 +8,7 @@ public final class EstructuraBBDD {
                     "(" + EstructuraCampeonatoTorneo._ID + " integer PRIMARY KEY, "
                     + EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR+ " text, "
                     + EstructuraCampeonatoTorneo.COLUMN_CIUDAD + " text, "
-                    + EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS + " integer, ";
-                    //+ EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR + " text)";
+                    + EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS + " integer, )";
 
     public static final String SQL_CREATE_PARTIDA =
             "CREATE TABLE IF NOT EXISTS "+ EstructuraPartida.TABLE_NAME_PARTIDA +

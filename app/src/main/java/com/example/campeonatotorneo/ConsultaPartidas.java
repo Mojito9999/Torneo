@@ -23,7 +23,7 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
     SQLiteHelper helper;
     ListView lv;
     ImageView imgViewFoto;
-
+    int _idCursor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +68,16 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
 
         //obtenemos el objeto que se ha pulsado, que en nuestro caso será de tipo Cursor
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
-        int numEncuentro=cursor.getInt(0);
-        String fecha=cursor.getString(1);
-        String jugador1=cursor.getString(2) ;
+        _idCursor=cursor.getInt(0);
+        int numEncuentro=cursor.getInt(1);
+        String fecha=cursor.getString(2);
+        String jugador1=cursor.getString(3) ;
         String jugador2=cursor.getString(4 ) ;
         int puntuacionJugador1=cursor.getInt(5);
         int puntuacionJugador2=cursor.getInt(6);
+
+
+
 
         //mostramos los datos en los cuadros de texto de la parte superior del layout
         txtTexto.setText(Integer.toString(numEncuentro));

@@ -52,9 +52,9 @@ public class ModificacionPartidas extends AppCompatActivity implements AdapterVi
         //obtenemos el objeto que se ha pulsado, que en nuestro caso será de tipo Cursor
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
         _idCursor=cursor.getInt(0);
-        int numEncuentro = cursor.getInt(0);
-        String fecha = cursor.getString(1);
-        String jugador1 = cursor.getString(2);
+        int numEncuentro = cursor.getInt(1);
+        String fecha = cursor.getString(2);
+        String jugador1 = cursor.getString(3);
         String jugador2 = cursor.getString(4);
         int puntuacionJugador1 = cursor.getInt(5);
         int puntuacionJugador2 = cursor.getInt(6);

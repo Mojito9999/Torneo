@@ -41,7 +41,6 @@ public class EliminacionPartidas extends AppCompatActivity implements AdapterVie
         consultaPartida();
         lv.setOnItemClickListener(this);
     }
-
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
         Cursor cursor = (Cursor) listView.getItemAtPosition(position);
@@ -49,9 +48,9 @@ public class EliminacionPartidas extends AppCompatActivity implements AdapterVie
         int numEncuentro = cursor.getInt(1);
         String fecha = cursor.getString(2);
         String jugador1 = cursor.getString(3);
-        String jugador2 = cursor.getString(5);
-        int puntuacionJugador1 = cursor.getInt(6);
-        int puntuacionJugador2 = cursor.getInt(7);
+        String jugador2 = cursor.getString(4);
+        int puntuacionJugador1 = cursor.getInt(5);
+        int puntuacionJugador2 = cursor.getInt(6);
 
         // mostramos los datos en los cuadros de texto de la parte superior del layout
         edtTexto1.setText(String.valueOf(numEncuentro));

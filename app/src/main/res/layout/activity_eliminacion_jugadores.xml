@@ -1,75 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".EliminacionJugadores"
     tools:ignore="ExtraText">
->
+    android:fitsSystemWindows="true">
 
 
     <EditText
         android:id="@+id/edtJugador_Modificar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Jugador"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edtCiudad_Modificar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/edtCiudad_Modificar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Ciudad"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/edtPartida_Moodificar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Partidas Ganadas"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edtJugador_Modificar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnModificar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#388E3C"
-        android:onClick="eliminarEquipos"
-        android:text="ELIMINAR"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edtJugador_Modificar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:onClick="eliminarJugador"
+        android:text="ELIMINAR" />
 
     <View
         android:id="@+id/view"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#999900"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#999900" />
 
     <ListView
         android:id="@+id/lstJugador_consulta"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ListView>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
