@@ -22,7 +22,7 @@ public class ConsultaJugadores extends AppCompatActivity implements AdapterView.
     SQLiteDatabase db;
     SQLiteHelper helper;
     ListView lv;
-    ImageView imgViewFoto;
+    //ImageView imgViewFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class ConsultaJugadores extends AppCompatActivity implements AdapterView.
         txtTexto1 = findViewById(R.id.textView2);
         txtTexto2 = findViewById(R.id.textView3);
         txtTexto3 = findViewById(R.id.textView4);
-        imgViewFoto = findViewById(R.id.imageView);
+        //imgViewFoto = findViewById(R.id.imageView);
         lv = findViewById(R.id.lstJugador_consulta);
 
         //realizamos la consulta
@@ -50,8 +50,8 @@ public class ConsultaJugadores extends AppCompatActivity implements AdapterView.
 
         //adaptamos el cursor a nuestro ListView
 
-        String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR};
-        int[] to = {R.id.textView2, R.id.textView3,R.id.textView4,R.id.imageView};
+        String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS};
+        int[] to = {R.id.textView2, R.id.textView3,R.id.textView4};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);
@@ -61,21 +61,20 @@ public class ConsultaJugadores extends AppCompatActivity implements AdapterView.
 
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
+        Cursor cursor = (Cursor) listView.getItemAtPosition(position);
+        int _id = cursor.getInt(0);
+        String jugador = cursor.getString(1);
+        String ciudad = cursor.getString(2);
+        int partidasGanadas = cursor.getInt(3);
+        //int foto = cursor.getInt(3);
 
-        //obtenemos el objeto que se ha pulsado, que en nuestro caso será de tipo Cursor
-        Cursor cursor=(Cursor) listView.getItemAtPosition(position);
-        int _id=cursor.getInt(0);
-        String jugador=cursor.getString(1) ;
-        String ciudad=cursor.getString(2 ) ;
-        int partidasGanadas=cursor.getInt(4);
-        int foto= cursor.getInt(3);
-        //mostramos los datos en los cuadros de texto de la parte superior del layout
-        txtTexto1.setText(_id +", "+jugador);
+        // Mostramos los datos en los TextView
+        txtTexto1.setText(_id + ", " + jugador);
         txtTexto2.setText(ciudad);
-        txtTexto3.setText(partidasGanadas);
-        imgViewFoto.setBackgroundResource(foto);
+        txtTexto3.setText(String.valueOf(partidasGanadas));
 
-
+        // Carga la imagen (ajusta esto según cómo almacenas las imágenes en tu base de datos)
+        //imgViewFoto.setImageResource(foto);
     }
 
     @Override

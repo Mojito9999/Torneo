@@ -35,7 +35,6 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
         txtTexto3 = findViewById(R.id.textView4);
         txtTexto4 = findViewById(R.id.textPuntuacionJ1_consulta);
         txtTexto5 = findViewById(R.id.textPuntacionJ2_consulta);
-        imgViewFoto = findViewById(R.id.imageView);
         lv = findViewById(R.id.listPartidaConsulta);
 
         //realizamos la consulta
@@ -50,7 +49,10 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
 
         db = helper.getReadableDatabase();
         Cursor cursor = db.query(EstructuraBBDD.EstructuraPartida.TABLE_NAME_PARTIDA, null, null, null, null, null, null);
-
+// Mueve el cursor al principio
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraPartida.COLUMN_NUM_ENCUENTRO, EstructuraBBDD.EstructuraPartida.COLUMN_FECHA,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_JUGADOR_2, EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1,EstructuraBBDD.EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2};
@@ -61,27 +63,25 @@ public class ConsultaPartidas extends AppCompatActivity implements AdapterView.O
 
         db.close();
     }
-
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
 
         //obtenemos el objeto que se ha pulsado, que en nuestro caso será de tipo Cursor
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
         int numEncuentro=cursor.getInt(0);
-        int fecha=cursor.getInt(1);
+        String fecha=cursor.getString(1);
         String jugador1=cursor.getString(2) ;
         String jugador2=cursor.getString(4 ) ;
         int puntuacionJugador1=cursor.getInt(5);
         int puntuacionJugador2=cursor.getInt(6);
-        int foto= cursor.getInt(3);
+
         //mostramos los datos en los cuadros de texto de la parte superior del layout
-        txtTexto1.setText(numEncuentro +", "+fecha);
+        txtTexto.setText(Integer.toString(numEncuentro));
+        txtTexto1.setText(fecha);
         txtTexto2.setText(jugador1);
         txtTexto3.setText(jugador2);
-        txtTexto4.setText(puntuacionJugador1);
-        txtTexto5.setText(puntuacionJugador2);
-        imgViewFoto.setBackgroundResource(foto);
-
+        txtTexto4.setText(String.valueOf(puntuacionJugador1)); // Convertir a cadena
+        txtTexto5.setText(String.valueOf(puntuacionJugador2));
 
     }
     @Override

@@ -8,16 +8,16 @@ public final class EstructuraBBDD {
                     "(" + EstructuraCampeonatoTorneo._ID + " integer PRIMARY KEY, "
                     + EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR+ " text, "
                     + EstructuraCampeonatoTorneo.COLUMN_CIUDAD + " text, "
-                    + EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS + " integer, "
-                    + EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR + " blob)";
+                    + EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS + " integer, ";
+                    //+ EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR + " text)";
 
     public static final String SQL_CREATE_PARTIDA =
             "CREATE TABLE IF NOT EXISTS "+ EstructuraPartida.TABLE_NAME_PARTIDA +
                     "("+ EstructuraPartida._ID + " integer PRIMARY KEY,"
                     + EstructuraPartida.COLUMN_NUM_ENCUENTRO+ " integer, "
                     + EstructuraPartida.COLUMN_FECHA + " text, "
-                    + EstructuraPartida.COLUMN_JUGADOR_1 + " integer, "
-                    + EstructuraPartida.COLUMN_JUGADOR_2+ " integer, "
+                    + EstructuraPartida.COLUMN_JUGADOR_1 + " text, "
+                    + EstructuraPartida.COLUMN_JUGADOR_2+ " text, "
                     + EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_1 + " integer, "
                     + EstructuraPartida.COLUMN_PUNTUACION_JUGADOR_2+ " integer)";
 

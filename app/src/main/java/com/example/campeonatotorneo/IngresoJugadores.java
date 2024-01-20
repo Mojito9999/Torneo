@@ -44,13 +44,14 @@ public class IngresoJugadores extends AppCompatActivity implements AdapterView.O
         //obtenemos el objeto que se ha pulsado, que en nuestro caso será de tipo Cursor
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
         _idCursor=cursor.getInt(0);
-        String titulo=cursor.getString(1) ;
-        String compositor=cursor.getString(2 ) ;
-        int year=cursor.getInt(5);
+        String jugador=cursor.getString(1) ;
+        String ciudad=cursor.getString(2 ) ;
+        int partidasGanadas=cursor.getInt(3);
         //mostramos los datos en los cuadros de texto de la parte superior de layout
-        edtTexto1.setText(titulo);
-        edtTexto2.setText(compositor);
-        edtTexto3.setText(Integer.toString(year));
+        edtTexto1.setText(jugador);
+        edtTexto2.setText(ciudad);
+        edtTexto3.setText(Integer.toString(partidasGanadas));
+
     }
     public void ingresarEquipos(View view) {
         db = helper.getWritableDatabase();
@@ -83,7 +84,7 @@ public class IngresoJugadores extends AppCompatActivity implements AdapterView.O
         //adaptamos el cursor a nuestro ListView
 
         String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR};
-        int[] to = {R.id.textView2, R.id.textView3,R.id.textView4,R.id.imageView};
+        int[] to = {R.id.textView2, R.id.textView3,R.id.textView4};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);

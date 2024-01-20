@@ -37,27 +37,28 @@ public class ModificacionJugadores extends AppCompatActivity implements AdapterV
         helper = new SQLiteHelper(this);
         //realizamos la consulta
         consultaTorneo();
-   //     lv.setOnItemClickListener(this);
+        lv.setOnItemClickListener(this);
 
     }
+
     public void onItemClick(AdapterView<?> listView, View view, int position, long
             id) {
         //obtenemos el objeto que se ha pulsado, que en nuestro caso será de tipo Cursor
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
         _idCursor=cursor.getInt(0);
-        String titulo=cursor.getString(1) ;
-        String compositor=cursor.getString(2 ) ;
-        int year=cursor.getInt(5);
+        String jugador=cursor.getString(1) ;
+        String ciudad=cursor.getString(2 ) ;
+        int partidasGanadas=cursor.getInt(3);
         //mostramos los datos en los cuadros de texto de la parte superior de layout
-        edtTexto1.setText(titulo);
-        edtTexto2.setText(compositor);
-        edtTexto3.setText(Integer.toString(year));
+        edtTexto1.setText(jugador);
+        edtTexto2.setText(ciudad);
+        edtTexto3.setText(Integer.toString(partidasGanadas));
     }
     public void modificarEquipos(View view) {
         db = helper.getReadableDatabase();
         String nombreModif = String.valueOf(edtTexto1.getText());
         String ciudadModif = String.valueOf(edtTexto2.getText());
-        String partidasGanadasModif = String.valueOf(edtTexto2.getText());
+        String partidasGanadasModif = String.valueOf(edtTexto3.getText());
         if ((_idCursor > 0) && (nombreModif != "") && (ciudadModif != "")) {
         //realizamos el update de los campos
             ContentValues values = new ContentValues();
@@ -86,8 +87,8 @@ public class ModificacionJugadores extends AppCompatActivity implements AdapterV
 
         //adaptamos el cursor a nuestro ListView
 
-        String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS};
-        int[] to = {R.id.textView5, R.id.textView6,R.id.textView7};
+        String[] from = {EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_NOMBRE_JUGADOR, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_CIUDAD,EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_PARTIDAS_GANADAS, EstructuraBBDD.EstructuraCampeonatoTorneo.COLUMN_FOTO_JUGADOR};
+        int[] to = {R.id.textView2, R.id.textView3,R.id.textView4};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(this, R.layout.lista, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(adaptador);
