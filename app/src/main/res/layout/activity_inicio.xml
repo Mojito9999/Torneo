@@ -16,31 +16,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <!-- Icono en el centro de la página -->
-    <TextView
-        android:id="@+id/textViewTitulo"
-        android:layout_width="411dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="33dp"
-        android:text="Juegos de mesa"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#E1DADA"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/icono_centro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/icono_centro"
         android:layout_width="240dp"
         android:layout_height="336dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="133dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
         app:srcCompat="@drawable/dado" />
 
     <!-- LinearLayout para alinear los ImageButtons al final de la página -->
