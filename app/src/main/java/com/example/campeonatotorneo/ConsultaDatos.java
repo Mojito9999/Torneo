@@ -34,6 +34,7 @@ public class ConsultaDatos extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -44,11 +45,7 @@ public class ConsultaDatos extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menu_consultas) {
-            Intent intent = new Intent(this, ConsultaDatos.class);
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.menu_modificar) {
+        if (id == R.id.menu_modificar) {
             Intent intent = new Intent(this, ModificarDatos.class);
             startActivity(intent);
             return true;
@@ -64,5 +61,5 @@ public class ConsultaDatos extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }
+
